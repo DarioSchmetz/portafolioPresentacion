@@ -9,22 +9,24 @@ body {
 }
 nav ul li {
     list-style: none;
-    margin-left: 75px;
+    margin-left: 55px;
     padding: 12px 0;
     float: left;
     position: relative;
+    
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #444;
+    color: blue;
     font-weight: bold;
 }
 
 
 .header {
 
-    display: flex;
+    display: grid;
+    grid-template-columns: (3,1fr);
     align-items: center;
     justify-content: space-between;
     padding: 100px;
@@ -49,31 +51,33 @@ h1 {
     /* display: inline; (puedes omitir esta línea) */
     margin-right: 20px; /* Puedes ajustar el margen según tus necesidades */
 }
+h3{
+    color: antiquewhite;
+}
+h2{
+    color: antiquewhite;
+}
 #nombre {
-    color: red;
     margin-right: 50px;
     /* width: 100px; (puedes ajustar esto según tus necesidades) */
     max-width: 100px; /* Puedes ajustar según tus necesidades */
 }
-h3{
-    color: yellow;
+p{
+    color: white;
 }
 a {
    color: white;
 }
 
-#carrera {
-    color:red;
-margin: 0px;}
 section {
-    display: flexbox;
+    display: grid;
+    grid-template-columns: (3,1fr);
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
     background-color: #333;
     border-radius: 4px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);}
 section:hover {
     transform: scale(1.1); /* Aumenta el tamaño al 110% */
     transition: transform 0.3s ease; /* Agrega una transición suave */
@@ -82,21 +86,7 @@ section:hover {
     background-color: white;
 }
 
-@media screen and (max-width: 768px) {    
-    .header {
-        flex-direction: column; /* Cambia la dirección de flex a columna */
-        align-items: flex-start; /* Alinea los elementos al comienzo */
-    }
 
-    nav ul {
-        flex-direction: column; /* Cambia la dirección de flex a columna */
-        align-items: flex-start; /* Alinea los elementos al comienzo */
-    }
-
-    nav ul li {
-        margin: 10px 0; /* Ajusta el espacio entre elementos */
-    }
-}
 
 
 .habilidad li:first-child {
@@ -107,18 +97,15 @@ h2 {
     color: white;
 }
 
-ul {
-    list-style-type: e;
-    padding: 0;
-    text-decoration: none;}
+
 
 li {
     margin-bottom: 5px;
     text-decoration: none;
+    color: white;
 }
 a{
     text-decoration: none;
-    color:red;
 }
 
 .project {
