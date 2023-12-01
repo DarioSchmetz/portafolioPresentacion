@@ -1,20 +1,58 @@
 body {
     font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
+    margin: 3px;
+    padding: 3px;
     background: linear-gradient(to right, white 50%, black 50%);
     /* Puedes ajustar el porcentaje según tus necesidades */
     background-size: 100% 100%; 
     background-repeat: no-repeat;
 }
-nav ul li {
+nav ul {
     list-style: none;
-    margin-left: 75px;
-    padding: 12px 0;
-    float: left;
+    margin: 3px;
+    padding: 0;
+    display: flex;
+}
+
+#volver{
+    color: whitee;
+    max-width: 100px;
+    padding: 3px;
+    background-color: white;
+    border-radius: 10px;}
+
+/* Estilos generales para pantallas más grandes */
+
+nav ul li {
+    display: table-cell;
     position: relative;
+    padding: 0 15px;
+}
+li a.active, li a:hover{
+    background: red;
+    transition: .5s;
+}
+a {
+    text-transform: lowercase;
+    background-color: black;
+    font-size: 12px;
     
 }
+
+/* Media query para pantallas más pequeñas, como dispositivos móviles */
+
+@media screen and (max-width: 768px) {
+    nav ul li {
+        display: block; /* Cambiar a apilado en dispositivos móviles */
+        padding: 10px; /* Ajustar el relleno */
+    }
+
+    a {
+        display: block; /* Ajustar el enlace a apilado */
+        padding: 10px;
+    }
+}
+
 
 nav ul li a {
     text-decoration: none;
@@ -22,18 +60,14 @@ nav ul li a {
     font-weight: bold;
 }
 
-
+/* Estilos del encabezado */
 .header {
-
     display: grid;
-    grid-template-columns: (3,1fr);
+    grid-template-columns: 0,5fr; /* Cambia a una columna en dispositivos móviles */
     align-items: center;
-    justify-content: space-between;
-    padding: 100px;
-    background: linear-gradient(to right, white 50%, black 50%);
-
+    justify-content: center;
+    padding: 20px;
 }
-
 
 .imagen {
     width: 100px;
@@ -65,9 +99,7 @@ h2{
 p{
     color: white;
 }
-a {
-   color: white;
-}
+
 
 section {
     display: grid;
@@ -76,11 +108,28 @@ section {
     margin: 20px auto;
     padding: 20px;
     background-color: #333;
+  background: linear-gradient(to right, #ff0000, #00ff00, #0000ff), url("yin_yan.jpg");
+        background-repeat:  no-repeat;
     border-radius: 4px;
-    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);}
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    opacity: 0; /* Inicialmente, establece la opacidad en 0 para ocultar el contenido */
+    transition: opacity 0.3s ease; /* Agrega una transición suave */
+}
 section:hover {
     transform: scale(1.1); /* Aumenta el tamaño al 110% */
     transition: transform 0.3s ease; /* Agrega una transición suave */
+    opacity: 1; /* Cuando el mouse está sobre la sección, establece la opacidad en 1 para mostrar el contenido */
+}
+@media screen and (max-width: 600px) {
+    section {
+        grid-template-columns: 1fr; /* Una sola columna en dispositivos móviles */
+        opacity: 0; /* Oculta el contenido de inmediato en dispositivos móviles */
+    }
+
+    section:hover {
+        transform: none; /* Elimina la transformación en dispositivos móviles al pasar el mouse */
+        opacity: 1; /* Muestra el contenido cuando se toca en dispositivos móviles */
+    }
 }
 .habilidad {
     background-color: white;

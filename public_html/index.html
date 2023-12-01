@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <title>Tu Nombre </title>
+    
 </head>
 <body>
+   
 
     <header class="header">
         
@@ -16,11 +18,11 @@
            
         <nav>
         <ul>
-            <li><a href="#about">Sobre Mí</a></li>
-            <li><a href="#skills">Habilidades</a></li>
-            <li><a href="#projects">Proyectos Destacados</a></li>
-            <li><a href="#contact">Contacto</a></li> </ul> </nav>
-
+            <li><a href="#about" onclick="mostrarSeccion('about')">Sobre Mí</a></li>
+            <li><a href="#skills" onclick="mostrarSeccion('skills')">Habilidades</a></li>
+            <li><a href="#projects" onclick="mostrarSeccion('projects')">Proyectos Destacados</a></li>
+            <li><a href="#contact" onclick="mostrarSeccion('contact')">Contacto</a></li>
+        </nav>
 
 
     </header>
@@ -34,7 +36,10 @@
     <h1>Carrera</h1>
         <h2 id="carrera">Técnico Superior en Programación </h1>
         <p>Soy un apasionado de la programación con experiencia en diversas tecnologías 
-            desde un punto de vista tecnico, basico dando respuesta segun demande el proyecto..</p>
+            desde un punto de vista tecnico, basico dando respuesta segun demande el proyecto.
+        </p>
+        <a href="#" onclick="goBack()" id="volver">Volver</a>     </div>
+
     </section>
 
     <section id="skills" class="skill">
@@ -43,6 +48,9 @@
             <li>Desarrollo web (HTML, CSS, JavaScript)</li>
             <li>Programacon Backend Java,Php</li>
             <li>Base de datos (MySql, PostgreSQL,SqlServer)</li>
+                       <a href="#" id="volver" onclick="goBack()">Volver</a>     </div>
+ </div>
+
         </ul>
     </section>
 
@@ -52,11 +60,16 @@
             <h3>Voluntariado Psicopedadogia</h3>
             <p>PHP, HTML, JavaScript, MySQL. Realizar requerimientos, relevamientos, programar y utilizar tablero Kanban para el desarrollo del proyecto.
                  Se requiere presentar cada semana avances del producto.</p>
+                 <a href="#" id="volver" onclick="goBack()">Volver</a>     </div>
+                </div>
+
         </div>
         <div class="project">
             <h3>Gestion Proyecto Poliza.</h3>
             <p>En el proceso de desarrollo de software, es fundamental realizar actividades como requerimientos, 
-                relevamientos, análisis y diseño.</p>        </div>
+                relevamientos, análisis y diseño.</p>   
+                <a href="#" id="volver" onclick="goBack()">Volver</a>     </div>
+            </div>
         <!-- Agrega más proyectos según sea necesario -->
     </section>
 
@@ -66,9 +79,34 @@
         <ul>
             <li>Email: dario.schmetz5@gmail.com</li>
             <li>LinkedIn: <a class="a" href="https://www.linkedin.com/in/dario-schmetz-58bb63a0">https://www.linkedin.com/in/dario-schmetz-58bb63a0</a></li>
-            <li>GitHub: <a href="https://github.com/dario25">https://github.com/dario25</a> (Temporal) <a href="https://github.com/DarioSchmetz">https://github.com/DarioSchmetz</a> (Nuevo)</li>
+            <li>GitHub: <a href="https://github.com/DarioSchmetz">https://github.com/DarioSchmetz</a>
+                </li>
+            <a href="#" id="volver" onclick="goBack()">Volver</a>     </div>
+
         </ul>
     </section>
+    
+    <script>
+        function goBack() {
+            window.history.back(); // Volver atrás en la historia del navegador
+        }
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mostrar la primera sección al cargar la página
+            mostrarSeccion('about');
+        });
+    
+        function mostrarSeccion(id) {
+            // Ocultar todas las secciones
+            document.querySelectorAll('section').forEach(function (seccion) {
+                seccion.style.opacity = 0;
+            });
+    
+            // Mostrar la sección específica
+            document.getElementById(id).style.opacity = 1;
+        }
+    </script>
 
 </body>
 </html>
